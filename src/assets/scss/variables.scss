@@ -1,0 +1,14 @@
+$tablet: 768px;
+
+@mixin for-tablet {
+  @media screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin sizing-mode-boxed {
+  @include for-desktop {
+    max-width: var(--boxed-mode-max-width);
+    margin: 0 auto;
+  }
+}

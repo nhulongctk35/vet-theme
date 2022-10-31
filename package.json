@@ -1,0 +1,17 @@
+{
+  "name": "vet-theme",
+  "version": "1.0.0",
+  "license": "MIT",
+  "baseTheme": "@shopware-pwa/theme-base",
+  "scripts": {
+    "build": "shopware-pwa build-theme",
+    "dev": "shopware-pwa dev-theme"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@shopware-pwa/cli": "^1.5.3",
+    "@shopware-pwa/theme-base": "^1.5.3"
+  }
+}
