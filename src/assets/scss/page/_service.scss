@@ -1,0 +1,26 @@
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: flex-start;
+  gap: 40px;
+
+  &__background {
+    display: none;
+  }
+
+  @include for-tablet() {
+    &__background {
+      display: flex;
+      justify-content: center;
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  @include for-desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

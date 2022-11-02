@@ -1,0 +1,15 @@
+.products-recomendations {
+  .products-grid {
+    padding: 0 !important;
+
+    .sf-section__content {
+      justify-content: center;
+      gap: 40px;
+    }
+  }
+  .sf-image {
+    width: 135px;
+    height: 100%;
+    margin: 0 auto;
+  }
+}

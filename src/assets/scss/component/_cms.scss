@@ -1,0 +1,72 @@
+div[name="cms-generic-block"] {
+  > div {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.cms-block-forms {
+  padding: 0 15px;
+}
+
+.cms-block-default {
+  margin: 0 !important;
+
+  h1 {
+    font-size: var(--h1-font-size);
+  }
+
+  h2 {
+    font-size: var(--h2-font-size);
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+.cms-block-text-two-column {
+  .cms-block-text-two-column__text {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+.cms-w50 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.service-page {
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 14px;
+  color: #333;
+
+  div[name="cms-generic-block"] > div {
+    margin-top: 25px !important;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  .payment-logo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 10px;
+  }
+}
+
+@include for-tablet {
+  .cms-w50 {
+    width: 50% !important;
+    margin: 0 auto 0 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .service-page {
+    max-width: 50%;
+    padding-right: 0px;
+  }
+}

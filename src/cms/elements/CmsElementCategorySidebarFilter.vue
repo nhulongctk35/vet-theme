@@ -1,20 +1,4 @@
-<template>
-  <SwProductListingFilters listingType="categoryListing" />
-</template>
+<template></template>
 
-<script>
-import SwProductListingFilters from "@/components/SwProductListingFilters.vue"
-
-export default {
-  name: "CmsElementCategorySidebarFilter",
-  components: {
-    SwProductListingFilters,
-  },
-  props: {
-    content: {
-      type: Object,
-      default: () => ({}),
-    },
-  },
-}
-</script>
+<style lang="scss" scoped>
+</style>

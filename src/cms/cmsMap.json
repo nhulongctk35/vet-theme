@@ -1,25 +1,16 @@
 {
   "sections": {
-    "default": "CmsSectionDefault",
-    "sidebar": "CmsSectionSidebar"
+    "default": "CmsSectionDefault"
   },
   "blocks": {
-    "sidebar-filter": "CmsBlockDefault",
     "product-listing": "CmsBlockProductListing",
     "image": "CmsBlockDefault",
-    "category-navigation": "CmsBlockCategoryNavigation",
-    "product-slider": "CmsBlockDefault",
-    "gallery-buybox": "CmsBlockSplitView",
     "text": "CmsBlockDefault"
   },
   "elements": {
-    "product-box": "CmsElementProductCard",
-    "product-slider": "CmsElementProductSlider",
     "product-listing": "CmsElementProductListing",
     "category-navigation": "CmsElementCategoryNavigation",
-    "sidebar-filter": "CmsElementCategorySidebarFilter",
     "product-name": "CmsElementText",
-    "text": "CmsElementText",
-    "buy-box": "CmsElementBuyBox"
+    "text": "CmsElementText"
   }
 }

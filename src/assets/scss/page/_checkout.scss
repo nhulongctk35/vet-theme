@@ -1,0 +1,48 @@
+.checkout {
+  @include for-desktop {
+    max-width: 1256px !important;
+  }
+
+  .log-in {
+    margin-bottom: var(--spacer-lg);
+  }
+
+  .promo-code__circle-icon {
+    --button-size: 28px !important;
+    align-self: center;
+    position: relative;
+    top: -3px;
+  }
+
+  div[name="doNotCreateAccount"] {
+    margin-top: 8px;
+    margin-bottom: 12px;
+  }
+}
+
+.checkout__main {
+  margin: 24px 0px;
+  padding-top: 0 !important;
+
+  .log-in__buttons-container {
+    .log-in__button {
+      background-color: transparent;
+      padding: 0;
+      color: var(--black);
+      text-decoration: underline;
+      font-size: var(--h4-font-size);
+      font-weight: 600;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+
+.sf-radio__container {
+  p {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+}

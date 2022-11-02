@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import CmsGenericElement from "sw-cms/CmsGenericElement"
+import CmsGenericElement from "sw-cms/CmsGenericElement";
 
 export default {
   name: "CmsBlockDefault",
@@ -28,16 +28,8 @@ export default {
 
   computed: {
     getSlots() {
-      return this.content.slots || []
+      return this.content.slots || [];
     },
   },
-}
+};
 </script>
-
-<style lang="scss" scoped>
-@import "@/cms/settings.scss";
-
-.cms-block-default {
-  @include sizing-mode-boxed;
-}
-</style>

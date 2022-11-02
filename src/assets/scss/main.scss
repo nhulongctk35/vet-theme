@@ -1,0 +1,21 @@
+// we're importing here main style variables from theme
+@import "./variables.scss";
+
+@import "./base/base.scss";
+
+@import "./base/typography.scss";
+
+@import "./component/flags";
+@import "./component/accordion";
+@import "./component/sidebar";
+@import "./component/forms";
+@import "./component/cms";
+@import "./component/side-cart";
+@import "./component/product-box";
+@import "./component/swiper";
+@import "./component/modal";
+
+@import "./page/checkout.scss";
+@import "./page/product-detail.scss";
+@import "./page/service";
+@import "./page/related-products.scss";

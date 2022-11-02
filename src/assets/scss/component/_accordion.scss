@@ -1,0 +1,21 @@
+.v-accordion {
+  .sf-accordion-item {
+    .sf-accordion-item__header {
+      --accordion-item-header-font-size: 14px;
+
+      height: 60px;
+      border-radius: 0;
+      border-bottom: 1px solid var(--c-border);
+      text-transform: capitalize;
+
+      &.is-open {
+        --accordion-item-header-color: var(--accordion-item-header-color);
+        --chevron-color: var(--accordion-item-header-color);
+      }
+    }
+
+    > div {
+      height: auto !important;
+    }
+  }
+}

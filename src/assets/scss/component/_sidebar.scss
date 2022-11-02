@@ -1,0 +1,27 @@
+.nav {
+  a {
+    color: var(--sidebar-content-color);
+  }
+}
+
+.sf-sidebar__bottom {
+  background-color: #ebebeb;
+  font-size: 12px;
+
+  .my-cart__description {
+    color: #828282;
+  }
+
+  .my-cart__action {
+    display: flex;
+    justify-content: flex-end;
+
+    > * {
+      width: unset;
+    }
+  }
+
+  .my-cart__total-price {
+    --property-name-font-weight: 700 !important;
+  }
+}

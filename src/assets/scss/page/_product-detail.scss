@@ -1,0 +1,21 @@
+.sw-product {
+  &-details {
+    .sf-heading__title {
+      font-weight: 700;
+      color: var(--c-black);
+    }
+
+    .sf-heading {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.sf-price__special,
+.sf-price__old {
+  font-size: 14px !important;
+}
+
+.sf-price__special {
+  margin-left: 4px !important;
+}

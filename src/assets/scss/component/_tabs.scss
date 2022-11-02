@@ -1,0 +1,36 @@
+.vue-tabs {
+  font-size: 14px;
+  color: #000;
+
+  .nav-tabs {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 6px 0;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        border-right: 1px solid var(--c-border);
+      }
+
+      &.active {
+        background-color: #ebebeb;
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 12px 0;
+  }
+
+  .tabs__link {
+    color: #000;
+  }
+}

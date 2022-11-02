@@ -1,0 +1,45 @@
+.sf-modal {
+  --modal-top: 130px;
+  --modal-left: 50%;
+  --modal-transform: translateX(-50%, -50%);
+  --modal-width: 375px;
+  --modal-index: 4;
+  --modal-content-padding: 15px;
+  --modal-close-top: 0px;
+  --modal-close-right: 0;
+
+  .sf-modal__container {
+    border-radius: 6px;
+    width: calc(100% - 30px);
+    max-width: 375px;
+    border: 1px solid var(--c-border);
+    bottom: unset;
+    background-color: #fff;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    min-height: 49px;
+    border-bottom: 1px solid var(--c-border);
+  }
+
+  .sf-modal__close {
+    padding-right: 0;
+    padding-top: 0;
+    position: unset;
+  }
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
