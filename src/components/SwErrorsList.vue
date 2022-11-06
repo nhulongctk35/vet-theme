@@ -32,7 +32,7 @@ export default {
       default: () => [],
     },
   },
-  setup(props, {}) {
+  setup(props, { root }) {
     // enables to check whether error should also contain the field name
     const isFieldRelatedError = (errorCode) => FIELD_RELATED_ERRORS.includes(errorCode);
 
