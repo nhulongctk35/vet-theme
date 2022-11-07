@@ -1,7 +1,7 @@
 {
   "home": {
-    "headline": "Bestellen Sie jetzt direkt beim Tierarzt",
-    "short_desc": "Vor 20 Uhr bestellt wird heute (an Werktagen) versendet."
+    "headline": "Bestel nu direct bij de dierenarts",
+    "short_desc": "Vandaag voor 22.00u besteld morgen geleverd."
   },
   "account": {
     "delivery-address": "Meine Adressen (Lieferadresse)",
@@ -32,7 +32,7 @@
   "Click to select": "Klicken Sie zur Auswahl",
   "Company": "Firma",
   "Confirmation": "Konfirmation",
-  "Contact": "Kontakt",
+  "Contact": "Contact",
   "contact": {
     "finishHeadline": "Danke für Ihre Nachricht!",
     "finishMessage": "Ihre Frage/Bemerkung wurde erfolgreich gesendet. Wir werden Sie so bald wie möglich kontaktieren.",
@@ -121,15 +121,15 @@
   "Show Password": "Passwort anzeigen",
   "Not Match": "Beide eingegebenen Passworter muessen identisch sein",
   "advantage": {
-    "headline": "Vet-Direct Vorteile",
-    "delivery": "Schnelle Lieferung",
-    "shipping": "Preiswert abgeschickt",
-    "cheap": "Günstiger als beim Tierarzt",
-    "secure": "Sichere Zahlung",
-    "delivery_desc": "Bestellt an Wochentagen vor 20:00 Uhr, am selben Tag versendet!    ",
-    "shipping_desc": "Bestellung unabhängige Versandkosten, nie mehr als €3,95 Versand Beitrag.",
-    "cheap_desc": "Unsere Preise sind billiger und Sie bestellen bequem von zu Hause aus",
-    "secure_desc": "Ihre Daten sind bei uns sicher geschützt. Die Zahlungen werden in einer sicheren Umgebung gemacht."
+    "headline": "Vet-Direct voordelen",
+    "delivery": "Snelle levering",
+    "shipping": "Voordelig verzonden",
+    "cheap": "Goedkoper dan bij de dierenarts",
+    "secure": "Online dierenarts",
+    "delivery_desc": "Op werkdagen voor 22u besteld, dezelfde dag verzonden!",
+    "shipping_desc": "Al vanaf € 35,- gratis verzonden en anders nooit meer dan € 3,95 verzendbijdrage.",
+    "cheap_desc": "Onze prijzen liggen een stuk lager en je bestelt makkelijk vanuit huis",
+    "secure_desc": "Onze dierenarts staat voor u klaar: vet@vet-direct.shop"
   },
   "Out of Stock": "Vergriffen",
   "reviewCount": "{count} Review| {count} Beoordelingen"
