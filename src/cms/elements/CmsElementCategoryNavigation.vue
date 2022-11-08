@@ -35,7 +35,7 @@ export default {
 
     const { preloadRef } = useSharedState();
     preloadRef(navigationElements, async () => {
-      await loadNavigationElements();
+      await loadNavigationElements({ depth: 1 });
     });
 
     const navigation = computed(() => {

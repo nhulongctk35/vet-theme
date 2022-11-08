@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { SfInput } from "@storefront-ui/vue"
+import { SfInput } from "@storefront-ui/vue";
 
 export default {
   name: "SwInput",
@@ -17,9 +17,7 @@ export default {
   setup(props, { root }) {
     return {
       inputName: Math.random().toString(36).slice(2),
-    }
+    };
   },
-}
+};
 </script>
-
-<style lang="scss" scoped></style>

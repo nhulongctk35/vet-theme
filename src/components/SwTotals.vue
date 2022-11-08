@@ -17,10 +17,7 @@
       <SfProperty
         :name="$t('Total price')"
         :value="filterPrice(total)"
-        class="
-          sf-property--full-width
-          sw-totals__property sw-totals__property-total
-        "
+        class="sf-property--full-width sw-totals__property sw-totals__property-total"
       >
       </SfProperty>
     </div>
@@ -28,18 +25,12 @@
 </template>
 
 <script>
-import { SfProperty, SfDivider } from "@storefront-ui/vue"
-
-import SwPluginSlot from "sw-plugins/SwPluginSlot.vue"
-import { usePriceFilter } from "@/logic/usePriceFilter.js"
+import { SfProperty, SfDivider } from "@storefront-ui/vue";
+import { usePriceFilter } from "@/logic/usePriceFilter.js";
 
 export default {
   name: "SwTotals",
-  components: {
-    SwPluginSlot,
-    SfProperty,
-    SfDivider,
-  },
+  components: { SfProperty, SfDivider },
   props: {
     subtotal: {
       type: Number,
@@ -57,9 +48,9 @@ export default {
   setup() {
     return {
       filterPrice: usePriceFilter(),
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
