@@ -31,10 +31,6 @@
 
 <script>
 import { useDomains } from "@/logic";
-import SwHeader from "@/components/SwHeader.vue";
-import VLoader from "@/components/VLoader.vue";
-import SwBottomNavigation from "@/components/SwBottomNavigation.vue";
-import VSidebar from "@/components/VSidebar.vue";
 import {
   useCurrency,
   useNavigation,
@@ -43,25 +39,11 @@ import {
   useUIState,
 } from "@shopware-pwa/composables";
 import { ref, defineComponent, provide, watch } from "@vue/composition-api";
-import SwLanguageModal from "@/components/modals/SwLanguageModal.vue";
-import SwSellerModal from "@/components/modals/SwSellerModal.vue";
-const SwCart = () => import("@/components/SwCart.vue");
-import SwCookieBar from "@/components/gdpr/SwCookieBar.vue";
 import { getApplicationContext } from "@shopware-pwa/composables";
 
 export default defineComponent({
-  components: {
-    SwHeader,
-    SwCart,
-    SwBottomNavigation,
-    VSidebar,
-    SwLanguageModal,
-    SwSellerModal,
-    SwCookieBar,
-    VLoader,
-  },
   name: "DefaultLayout",
-  setup(props, { root }) {
+  setup() {
     const { preloadRef } = useSharedState();
     const { currentDomainId } = useDomains();
     const { apiInstance } = getApplicationContext({ contextName: "sellerDetail" });

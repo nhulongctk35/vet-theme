@@ -21,17 +21,13 @@
 
 <script>
 import Vue from "vue";
-import SwProductListing from "@/components/SwProductListing.vue";
 import { getApplicationContext, useCms } from "@shopware-pwa/composables";
 import { ref, computed } from "@vue/composition-api";
 import { getCategories } from "@shopware-pwa/shopware-6-client";
-import SwTopNavigation from "@/components/SwTopNavigation.vue";
 import { getCategoryUrl } from "@shopware-pwa/helpers";
-import VLoader from "@/components/VLoader.vue";
 
 export default {
   name: "CmsElementProductListing",
-  components: { SwProductListing, SwTopNavigation, VLoader },
   props: {
     content: {
       type: Object,

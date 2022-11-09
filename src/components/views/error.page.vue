@@ -15,8 +15,6 @@
   </div>
 </template>
 <script>
-import SwButton from "@/components/atoms/SwButton.vue";
-
 const customMessageDictionary = {
   404: "We can't find what you are looking for. Are you lost?",
   408: "The API is taking to long to respond",
@@ -29,7 +27,6 @@ const getMessageForCode = (code) => customMessageDictionary[code];
 
 export default {
   name: "ErrorPage",
-  components: { SwButton },
   props: {
     error: {
       type: Object,

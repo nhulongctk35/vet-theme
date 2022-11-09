@@ -18,16 +18,9 @@
 <script>
 import { useUIState, useSalutations } from "@shopware-pwa/composables";
 import { computed, provide, watch } from "@vue/composition-api";
-import SwTermsOfUseModal from "@/components/modals/SwTermsOfUseModal";
-import SwLogo from "@/components/SwLogo.vue";
 import { useSessionContext, useCurrency } from "@shopware-pwa/composables";
 
 export default {
-  components: {
-    SwTermsOfUseModal,
-    SwLogo,
-  },
-
   setup() {
     const { getSalutations } = useSalutations();
     const { availableCurrencies, loadAvailableCurrencies } = useCurrency();

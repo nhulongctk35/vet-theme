@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import SwAlert from "@/components/atoms/SwAlert.vue";
-
 const FIELD_RELATED_ERRORS = [
   "VIOLATION::IS_BLANK_ERROR",
   "VIOLATION::TOO_LOW_ERROR",
@@ -25,7 +23,6 @@ const FIELD_RELATED_ERRORS = [
 
 export default {
   name: "SwErrorsList",
-  components: { SwAlert },
   props: {
     list: {
       type: Array,
