@@ -12,8 +12,8 @@
   <CmsPage v-else :content="cmsPage" />
 </template>
 <script>
-import { computed } from "@vue/composition-api";
-import CmsPage from "sw-cms/CmsPage";
+import { computed } from "@vue/composition-api"
+import CmsPage from "sw-cms/CmsPage"
 
 export default {
   name: "ProductPage",
@@ -25,15 +25,15 @@ export default {
     },
   },
   setup(props) {
-    const product = computed(() => props.page.product);
-    const cmsPage = computed(() => props.page.cmsPage);
+    const product = computed(() => props.page.product)
+    const cmsPage = computed(() => props.page.cmsPage)
 
     return {
       product,
       cmsPage,
-    };
+    }
   },
-};
+}
 </script>
 <style lang="scss" scoped>
 @import "@/assets/scss/variables";
