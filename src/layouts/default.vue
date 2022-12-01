@@ -19,9 +19,9 @@
     <client-only>
       <SwLanguageModal />
 
-      <VLoader :loading="loading">
+      <!-- <VLoader :loading="loading">
         <SwSellerModal :seller="seller" />
-      </VLoader>
+      </VLoader> -->
     </client-only>
   </div>
 </template>

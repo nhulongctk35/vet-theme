@@ -8,13 +8,7 @@
           itemprop="url"
           :title="getTranslatedProperty(accordion, 'name')"
         >
-          <img
-            v-if="accordion.media"
-            :src="accordion.media.url"
-            :alt="accordion.name"
-            width="65"
-            height="65"
-          />
+          <img v-if="accordion.media" :src="accordion.media.url" :alt="accordion.name" width="65" height="65" />
           <span itemprop="name">{{ getTranslatedProperty(accordion, "name") }}</span>
         </nuxt-link>
       </li>
@@ -24,33 +18,33 @@
 </template>
 
 <script>
-import { useSharedState, useNavigation } from "@shopware-pwa/composables";
-import { computed } from "@vue/composition-api";
-import { getCategoryUrl, getTranslatedProperty } from "@shopware-pwa/helpers";
+import { useSharedState, useNavigation } from "@shopware-pwa/composables"
+import { computed } from "@vue/composition-api"
+import { getCategoryUrl, getTranslatedProperty } from "@shopware-pwa/helpers"
 
 export default {
   name: "CmsElementCategoryNavigation",
   setup() {
-    const { loadNavigationElements, navigationElements } = useNavigation();
+    const { loadNavigationElements, navigationElements } = useNavigation()
 
-    const { preloadRef } = useSharedState();
+    const { preloadRef } = useSharedState()
     preloadRef(navigationElements, async () => {
-      await loadNavigationElements({ depth: 1 });
-    });
+      await loadNavigationElements({ depth: 1 })
+    })
 
     const navigation = computed(() => {
       return navigationElements.value?.filter(
-        (entry) => entry?.translated?.customFields?.custom_reference_id != "1"
-      );
-    });
+        (entry) => entry?.translated?.customFields?.custom_general_reference != "1"
+      )
+    })
 
     return {
       navigation,
       getCategoryUrl,
       getTranslatedProperty,
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
