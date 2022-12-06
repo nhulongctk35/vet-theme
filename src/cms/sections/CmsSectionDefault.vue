@@ -8,7 +8,10 @@
       <h1 class="blog-title" v-text="category.translated.name" />
       <div class="blog-content" v-html="category.translated.description" />
     </article>
-    <CmsGenericBlock v-else v-for="cmsBlock in getBlocks" :key="cmsBlock.id" :content="cmsBlock" />
+
+    <div v-else>
+      <CmsGenericBlock v-for="cmsBlock in getBlocks" :key="cmsBlock.id" :content="cmsBlock" />
+    </div>
   </div>
 </template>
 
@@ -30,8 +33,7 @@ export default {
     const { page } = useCms()
     const isCustomCmsSectionDefault = computed(() => {
       const path = $route.path
-
-      return ["/blog/"].some((item) => path.includes(item))
+      return ["/blog/", "/service"].some((item) => path.includes(item))
     })
 
     const category = computed(() => {
