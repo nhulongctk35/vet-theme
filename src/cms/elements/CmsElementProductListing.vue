@@ -121,7 +121,17 @@ export default {
       return getCategories(
         {
           ids,
-          associations: { seoUrls: {}, children: {} },
+          associations: {
+            seoUrls: {},
+            children: {
+              sort: [
+                {
+                  field: "createdAt",
+                  order: "asc",
+                },
+              ],
+            },
+          },
           includes: {
             category: [
               "seoUrls",
