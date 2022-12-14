@@ -18,10 +18,10 @@ export default {
   },
   computed: {
     classes() {
-      return [{ "sw-button--md": this.medium }];
+      return [{ "sw-button--md": this.medium }]
     },
   },
-};
+}
 </script>
 
 <style scoped lang="scss">

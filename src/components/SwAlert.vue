@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { SfAlert } from "@storefront-ui/vue";
+import { SfAlert } from "@storefront-ui/vue"
 
 export default {
   name: "SwAlert",
@@ -23,5 +23,5 @@ export default {
       default: "secondary",
     },
   },
-};
+}
 </script>
