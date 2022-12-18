@@ -141,6 +141,10 @@ button {
   cursor: pointer;
 }
 
+button:disabled {
+  pointer-events: none;
+}
+
 table {
   border-collapse: collapse;
 }
