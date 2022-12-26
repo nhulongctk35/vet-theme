@@ -1,0 +1,38 @@
+.product-list {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: -1px;
+
+  > * {
+    flex: 1 1 45%;
+    padding: 40px 20px;
+    border-right: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+
+    &:last-child {
+      border-right: 0;
+    }
+  }
+
+  .product-box {
+    @include for-tablet {
+      &:nth-child(4n + 4) {
+        border-right: 0;
+      }
+    }
+  }
+
+  @include for-tablet {
+    > * {
+      flex: 1 1 33.33%;
+    }
+  }
+
+  @include for-desktop {
+    > * {
+      flex: 1 1 25%;
+    }
+  }
+}

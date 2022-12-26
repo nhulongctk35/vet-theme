@@ -45,26 +45,8 @@
   --quantity-selector-height: 32px !important;
   --quantity-selector-background: transparent !important;
 
-  .sf-button--pure {
-    width: 30px;
-    height: 100%;
-    vertical-align: middle;
-    border-top: 1px solid var(--c-border);
-    border-bottom: 1px solid var(--c-border);
-    outline: none;
-    padding: 0;
-    box-shadow: none;
-    color: #555;
-  }
-
   .sf-input__label {
     display: none;
-  }
-
-  .sf-button--pure:first-child {
-    vertical-align: middle;
-    border-left: 1px solid var(--c-border);
-    border-radius: 5px 0 0 5px !important;
   }
 
   .sf-quantity-selector__input {
@@ -85,11 +67,6 @@
       line-height: 1;
       border: none !important;
     }
-  }
-
-  .sf-button--pure:last-child {
-    border-right: 1px solid var(--c-border);
-    border-radius: 0 5px 5px 0 !important;
   }
 }
 
