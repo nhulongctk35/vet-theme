@@ -1,23 +1,60 @@
 <template>
-  <SfInput
-    :name="`sw-input-${inputName}`"
-    v-bind="{ ...$props, ...$attrs }"
-    v-on="$listeners"
-  />
+  <div class="sw-input">
+    <label>
+      {{ label }}
+      <input v-model="internalValue" v-bind="$attrs" />
+    </label>
+  </div>
 </template>
 
 <script>
-import { SfInput } from "@storefront-ui/vue";
-
+import { computed } from "@vue/composition-api"
 export default {
   name: "SwInput",
-  components: {
-    SfInput,
+  inheritAttrs: false,
+  props: {
+    value: {
+      type: [Number, String],
+      required: true,
+    },
+    label: {
+      type: String,
+    },
   },
-  setup(props, { root }) {
+  setup(props, { emit }) {
+    const internalValue = computed({
+      get() {
+        return props.value
+      },
+      set(value) {
+        emit("input", value)
+      },
+    })
+
     return {
-      inputName: Math.random().toString(36).slice(2),
-    };
+      internalValue,
+    }
   },
-};
+}
 </script>
+
+<style scoped lang="scss">
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 700;
+  gap: 5px;
+}
+
+input {
+  padding: 8px 12px;
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  line-height: 17px;
+}
+
+.sw-input {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+</style>
