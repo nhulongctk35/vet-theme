@@ -2,7 +2,8 @@
   <div class="sw-input">
     <label>
       {{ label }}
-      <input v-model="internalValue" v-bind="$attrs" />
+      <input v-if="componentType == 'input'" v-model="internalValue" v-bind="$attrs" />
+      <textarea v-else v-model="internalValue" v-bind="$attrs" />
     </label>
   </div>
 </template>
@@ -19,6 +20,10 @@ export default {
     },
     label: {
       type: String,
+    },
+    componentType: {
+      value: String,
+      default: "input",
     },
   },
   setup(props, { emit }) {
@@ -46,7 +51,8 @@ label {
   gap: 5px;
 }
 
-input {
+input,
+textarea {
   padding: 8px 12px;
   border: 1px solid var(--c-border);
   border-radius: 4px;

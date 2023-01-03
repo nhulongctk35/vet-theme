@@ -1,8 +1,3 @@
-.sw-form__input {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
 .sf-checkbox__label {
   color: var(--c-text);
 }
@@ -17,32 +12,35 @@
   }
 }
 
-.sf-textarea textarea {
-  font-size: 16px !important;
-}
+// .sf-textarea textarea {
+//   font-size: 16px !important;
+// }
 
-.sf-input {
-  input {
-    font-size: 16px !important;
-    border-radius: 4px !important;
+// .sf-input {
+//   input {
+//     font-size: 16px !important;
+//     border-radius: 4px !important;
 
-    &:focus {
-      border-color: var(--c-accent) !important;
-    }
+//     &:focus {
+//       border-color: var(--c-accent) !important;
+//     }
 
-    &:disabled {
-      --input-border-color: var(--c-border) !important;
-    }
-  }
+//     &:disabled {
+//       --input-border-color: var(--c-border) !important;
+//     }
+//   }
 
-  &.invalid {
-    input {
-      border-color: var(--c-danger);
-    }
-  }
-}
+//   &.invalid {
+//     input {
+//       border-color: var(--c-danger);
+//     }
+//   }
+// }
 
 .sf-input__wrapper {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+
   .sf-input__label {
     --input-label-color: #333 !important;
     --input-label-font-size: 14px !important;
@@ -53,33 +51,9 @@
   }
 }
 
-.sf-input__bar {
-  display: none !important;
-}
-
-.sf-input__wrapper {
-  display: flex !important;
-  flex-direction: column-reverse !important;
-}
-
-.sw-form {
-  --form-radio-margin-top: 0 !important;
-  --radio-container-padding: 10px 15px 10px 17px;
-
-  .sf-select__label {
-    position: unset !important;
-  }
-}
-
 .sf-textarea__error-message,
 .sf-input__error-message {
   display: none !important;
-}
-
-.cms-element-contact-form {
-  .sf-input {
-    height: 100% !important;
-  }
 }
 
 .custom-checkbox {
@@ -145,12 +119,12 @@
   }
 }
 
-@media screen and (min-width: 576px) {
-  .sf-input input,
-  .sf-textarea textarea {
-    font-size: 14px !important;
-  }
-}
+// @media screen and (min-width: 576px) {
+//   .sf-input input,
+//   .sf-textarea textarea {
+//     font-size: 14px !important;
+//   }
+// }
 
 @include for-tablet {
   .sw-form {
