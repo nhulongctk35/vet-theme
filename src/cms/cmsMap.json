@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "default": "CmsSectionDefault"
+  },
+  "blocks": {
+    "product-listing": "CmsBlockProductListing",
+    "image": "CmsBlockDefault",
+    "text": "CmsBlockDefault"
+  },
+  "elements": {
+    "product-listing": "CmsElementProductListing",
+    "category-navigation": "CmsElementCategoryNavigation",
+    "product-name": "CmsElementText",
+    "text": "CmsElementText"
+  }
+}
