@@ -30,8 +30,6 @@ export default {
       return ["/blog/", "/service"].some((item) => path.includes(item))
     })
 
-    console.log('@blalb');
-
     return {
       isCustomCmsSectionDefault,
       name: computed(() => page.value?.category?.translated?.name),
