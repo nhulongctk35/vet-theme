@@ -6,12 +6,8 @@
 
     <VLoader :loading="loading" v-if="loading" />
 
-    <SwProductListing
-      v-else-if="activeCategory && activeCategory.level > 2 && sortedProducts"
-      :products="sortedProducts"
-      :initialListing="content.data.listing"
-      listingType="categoryListing"
-    />
+    <SwProductListing v-else-if="activeCategory && activeCategory.level > 2 && sortedProducts"
+      :products="sortedProducts" :initialListing="content.data.listing" listingType="categoryListing" />
   </div>
 </template>
 
@@ -130,7 +126,7 @@ export default {
         } else {
           this.$router.push(this.$routing.getUrl(getCategoryUrl(category)))
         }
-      } catch (error) {}
+      } catch (error) { }
     },
 
     loadChildrenCategory(ids, categoriesApiInstance) {
@@ -175,9 +171,5 @@ export default {
 <style scoped>
 .cms-product-listing {
   margin-top: 40px;
-}
-
-::v-deep .sw-collapse {
-  border-top: 0;
 }
 </style>
