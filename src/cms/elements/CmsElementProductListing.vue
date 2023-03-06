@@ -1,13 +1,18 @@
 <template>
-  <div :class="{ 'cms-product-listing': !isBrand }">
-    <div v-for="category in categories" :key="category.id">
-      <SwTopNavigation v-if="!isBrand" :active-category="category" @change="fetchSubcategory" />
-    </div>
-
+  <div>
     <VLoader :loading="loading" v-if="loading" />
-
-    <SwProductListing v-else-if="activeCategory && activeCategory.level > 2 && sortedProducts"
-      :products="sortedProducts" :initialListing="content.data.listing" listingType="categoryListing" />
+    <BrandsListing v-else-if="isBrandsListing" />
+    <SwProductListing
+      v-else-if="isProductsListing"
+      :products="sortedProducts"
+      :initialListing="content.data.listing"
+      listingType="categoryListing"
+    />
+    <template v-else>
+      <div v-for="category in categories" :key="category.id">
+        <SwTopNavigation v-if="!isBrandsListing" :active-category="category" @change="fetchSubcategory" />
+      </div>
+    </template>
   </div>
 </template>
 
@@ -40,14 +45,6 @@ export default {
     const categories = ref({})
     const products = ref(null)
 
-    const isBrand = computed(() => {
-      let parentCategory = categories.value[activeCategory.value?.level - 1]
-      if (parentCategory) {
-        return parentCategory?.translated?.customFields?.custom_general_reference == "1"
-      }
-      return false
-    })
-
     const sortedProducts = computed(() => {
       if (!products.value) return
 
@@ -62,13 +59,24 @@ export default {
       })
     })
 
+    const isBrandsListing = computed(() => {
+      return (
+        activeCategory.value?.level === 2 &&
+        activeCategory.value?.customFields?.custom_general_reference == process.env.BRAND_ID
+      ) // "1"
+    })
+    const isProductsListing = computed(() => {
+      return activeCategory.value?.level > 2 && !!sortedProducts.value
+    })
+
     return {
       sortedProducts,
       categories,
       cmsPage,
       activeCategory,
       categoriesApiInstance,
-      isBrand,
+      isBrandsListing,
+      isProductsListing,
       products,
       apiInstance,
       loading,
@@ -126,7 +134,7 @@ export default {
         } else {
           this.$router.push(this.$routing.getUrl(getCategoryUrl(category)))
         }
-      } catch (error) { }
+      } catch (error) {}
     },
 
     loadChildrenCategory(ids, categoriesApiInstance) {
