@@ -27,7 +27,7 @@ export default {
 
     const isCustomCmsSectionDefault = computed(() => {
       const path = $route.path
-      return ["/blog/", "/service"].some((item) => path.includes(item))
+      return ["/blog/", "/service/"].some((item) => path.includes(item))
     })
 
     return {
@@ -35,7 +35,7 @@ export default {
       name: computed(() => page.value?.category?.translated?.name),
       description: computed(() => {
         const linkReg = /(\w+)\((\w+)\)/gi
-        return page.value?.category?.translated?.description.replace(linkReg, `${$routing.getUrl("/")}$2`)
+        return page.value?.category?.translated?.description?.replace(linkReg, `${$routing.getUrl("/")}$2`)
       }),
     }
   },
