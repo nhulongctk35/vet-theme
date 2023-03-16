@@ -22,7 +22,7 @@ export default {
       default: () => ({}),
     },
   },
-  setup(props, { root: { $route, $routing } }) {
+  setup(props, { root: { $route, $routing, $linkReplace } }) {
     const { page } = useCms()
 
     const isCustomCmsSectionDefault = computed(() => {
@@ -34,8 +34,7 @@ export default {
       isCustomCmsSectionDefault,
       name: computed(() => page.value?.category?.translated?.name),
       description: computed(() => {
-        const linkReg = /(\w+)\((\w+)\)/gi
-        return page.value?.category?.translated?.description?.replace(linkReg, `${$routing.getUrl("/")}$2`)
+        return $linkReplace(page.value?.category?.translated?.description)
       }),
     }
   },

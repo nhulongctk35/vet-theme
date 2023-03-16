@@ -5,12 +5,16 @@
   "blocks": {
     "product-listing": "CmsBlockProductListing",
     "image": "CmsBlockDefault",
-    "text": "CmsBlockDefault"
+    "text": "CmsBlockDefault",
+    "image-text": "CmsBlockNoop",
+    "sidebar-filter": "CmsBlockNoop"
   },
   "elements": {
     "product-listing": "CmsElementProductListing",
     "category-navigation": "CmsElementCategoryNavigation",
     "product-name": "CmsElementText",
-    "text": "CmsElementText"
+    "text": "CmsElementText",
+    "image": "CmsElementNoop",
+    "sidebar-filter": "CmsElementNoop"
   }
 }
