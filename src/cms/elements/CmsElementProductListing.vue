@@ -2,6 +2,7 @@
   <div>
     <VLoader :loading="loading" v-if="loading" />
     <BrandsListing v-else-if="isBrandsListing" />
+    <TermsListing v-else-if="isTermsListing" />
     <SwProductListing
       v-else-if="isProductsListing"
       :products="sortedProducts"
@@ -10,14 +11,13 @@
     />
     <template v-else>
       <div v-for="category in categories" :key="category.id">
-        <SwTopNavigation v-if="!isBrandsListing" :active-category="category" @change="fetchSubcategory" />
+        <SwTopNavigation :active-category="category" @change="fetchSubcategory" />
       </div>
     </template>
   </div>
 </template>
 
 <script>
-import Vue from "vue"
 import { getApplicationContext, useCms } from "@shopware-pwa/composables"
 import { ref, computed } from "@vue/composition-api"
 import { getCategories } from "@shopware-pwa/shopware-6-client"
@@ -65,6 +65,11 @@ export default {
         activeCategory.value?.customFields?.custom_general_reference == process.env.BRAND_ID
       ) // "1"
     })
+    const isTermsListing = computed(() => {
+      return (
+        activeCategory.value?.level === 2 && activeCategory.value?.customFields?.custom_general_reference == "terms" // process.env.TERMS
+      )
+    })
     const isProductsListing = computed(() => {
       return activeCategory.value?.level > 2 && !!sortedProducts.value
     })
@@ -76,6 +81,7 @@ export default {
       activeCategory,
       categoriesApiInstance,
       isBrandsListing,
+      isTermsListing,
       isProductsListing,
       products,
       apiInstance,
@@ -102,10 +108,10 @@ export default {
         }
       })
 
-      Vue.set(this.categories, parentCategory[0].level, parentCategory[0])
+      this.$set(this.categories, parentCategory[0].level, parentCategory[0])
     }
 
-    Vue.set(this.categories, elements[0].level, elements[0])
+    this.$set(this.categories, elements[0].level, elements[0])
 
     if (this.cmsPage.category.level >= 3) {
       try {
@@ -130,7 +136,7 @@ export default {
         let categoryDetail = elements[0]
 
         if (categoryDetail?.children.length) {
-          Vue.set(this.categories, categoryDetail.level, categoryDetail)
+          this.$set(this.categories, categoryDetail.level, categoryDetail)
         } else {
           this.$router.push(this.$routing.getUrl(getCategoryUrl(category)))
         }
