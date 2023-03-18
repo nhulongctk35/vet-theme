@@ -3,6 +3,8 @@
     <VLoader :loading="loading" v-if="loading" />
     <BrandsListing v-else-if="isBrandsListing" />
     <TermsListing v-else-if="isTermsListing" />
+    <ServiceListing v-else-if="isServiceListing" />
+    <PrivacyListing v-else-if="isPrivacyListing" />
     <SwProductListing
       v-else-if="isProductsListing"
       :products="sortedProducts"
@@ -67,7 +69,17 @@ export default {
     })
     const isTermsListing = computed(() => {
       return (
-        activeCategory.value?.level === 2 && activeCategory.value?.customFields?.custom_general_reference == "terms" // process.env.TERMS
+        activeCategory.value?.level === 2 && activeCategory.value?.customFields?.custom_general_reference == "terms"
+      )
+    })
+    const isServiceListing = computed(() => {
+      return (
+        activeCategory.value?.level === 2 && activeCategory.value?.customFields?.custom_general_reference == "service"
+      )
+    })
+    const isPrivacyListing = computed(() => {
+      return (
+        activeCategory.value?.level === 2 && activeCategory.value?.customFields?.custom_general_reference == "privacy"
       )
     })
     const isProductsListing = computed(() => {
@@ -82,6 +94,8 @@ export default {
       categoriesApiInstance,
       isBrandsListing,
       isTermsListing,
+      isServiceListing,
+      isPrivacyListing,
       isProductsListing,
       products,
       apiInstance,

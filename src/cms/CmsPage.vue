@@ -12,7 +12,8 @@
 <script>
 import CmsGenericSection from "sw-cms/CmsGenericSection"
 import { computed } from "@vue/composition-api"
-import { useCms } from "@shopware-pwa/composables"
+import { useCms, useNavigation } from "@shopware-pwa/composables"
+import { getCategoryUrl } from "@shopware-pwa/helpers"
 
 export default {
   components: { CmsGenericSection },
@@ -22,12 +23,30 @@ export default {
       default: () => ({}),
     },
   },
-  setup(props, { root: { $route, $routing, $linkReplace } }) {
-    const { page } = useCms()
+  setup(_props, { root: { $linkReplace } }) {
+    const { navigationElements } = useNavigation({ type: "service-navigation" })
+    const { page, currentSearchPathKey } = useCms()
 
     const isCustomCmsSectionDefault = computed(() => {
-      const path = $route.path
-      return ["/blog/", "/service/"].some((item) => path.includes(item))
+      if (!navigationElements.value?.length) {
+        return false
+      }
+
+      // Example return ["/blog/a-blog-post/", "/service/payment/"]
+      const customSections = navigationElements.value
+        .filter((element) => {
+          return element?.level === 2 && ["blog", "service"].includes(element?.customFields?.custom_general_reference)
+        })
+        .map((element) => {
+          return element.children?.map((child) => getCategoryUrl(child))
+        })
+        .flat()
+
+      // Example return:
+      // - listing page: "/service/"
+      // - detail page: "/service/payment/"
+      const path = "/" + currentSearchPathKey.value
+      return customSections.some((item) => path.includes(item))
     })
 
     return {
